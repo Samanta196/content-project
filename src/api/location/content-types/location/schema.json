@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "opening_hours": {
+      "type": "text"
+    },
+    "capacity": {
+      "type": "biginteger"
+    },
+    "size": {
+      "type": "decimal"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "locations"
+    },
+    "location_overview": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "contact_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-data"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.address"
+    }
+  }
+}

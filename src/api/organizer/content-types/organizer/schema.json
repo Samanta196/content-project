@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizers",
+  "info": {
+    "singularName": "organizer",
+    "pluralName": "organizers",
+    "displayName": "Organizer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Corporate",
+        "Social",
+        "Festival",
+        "Conference",
+        "Nightlife"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.address",
+      "required": false
+    },
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "contact_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-data",
+      "required": true
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "inversedBy": "organizers"
+    }
+  }
+}

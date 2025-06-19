@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companions",
+  "info": {
+    "singularName": "companion",
+    "pluralName": "companions",
+    "displayName": "Companion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "comp_status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
