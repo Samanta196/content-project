@@ -1,4 +1,12 @@
-export default [
+module.exports = [
+  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:3000'],
+      credentials: true,
+    },
+  },
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
