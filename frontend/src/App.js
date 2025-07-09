@@ -7,7 +7,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:1337/api/events?populate=deep&locale=${locale}`)
+            .get(`http://localhost:1337/api/event?populate=deep&locale=${locale}`)
             .then(res => setEvents(res.data.data))
             .catch(err => console.error(err));
     }, [locale]);
